@@ -1,0 +1,81 @@
+"""
+string de data e hora no formato ISO-8601
+"""
+scalar DateTime
+
+type Game {
+  id: ID
+
+  name: String!
+
+  active: Boolean!
+
+  imageURL: String
+
+  type: Type!
+
+  createdAt: DateTime
+}
+
+input GameInput {
+  name: String
+
+  active: Boolean
+
+  imageURL: String
+
+  type: GameType!
+
+  createdAt: DateTime
+}
+
+type Type {
+  id: ID!
+
+  type: GameType!
+}
+
+enum GameType {
+  DIGITAL
+
+  FISICO
+}
+
+type Query {
+  games: [Game]
+
+  game(id: ID!): Game!
+}
+
+type Mutation {
+  addGame(game: GameInput): Game!
+
+  updateGame(id: ID!, game: GameInput): updateGameResponse!
+
+  deleteGame(id: ID!): deleteGameResponse!
+}
+
+interface customResponse {
+  code: Int!
+
+  message: String!
+}
+
+type deleteGameResponse implements customResponse {
+  code: Int!
+
+  message: String!
+}
+
+type updateGameResponse implements customResponse {
+  code: Int!
+
+  message: String!
+
+  game: Game!
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

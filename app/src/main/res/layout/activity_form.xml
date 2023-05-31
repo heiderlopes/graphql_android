@@ -1,0 +1,52 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/ivGame"
+        android:layout_width="96dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        tools:src="@mipmap/ic_launcher" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome"
+        tools:ignore="Autofill,TextFields" />
+
+    <EditText
+        android:id="@+id/etImageURL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="URL da imagem"
+        tools:ignore="Autofill,TextFields"/>
+
+
+    <EditText
+        android:id="@+id/etType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo"
+        tools:ignore="Autofill,TextFields"/>
+
+    <Button
+        android:id="@+id/btSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Salvar"/>
+    <Button
+        android:id="@+id/btDelete"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Apagar"/>
+
+</LinearLayout>

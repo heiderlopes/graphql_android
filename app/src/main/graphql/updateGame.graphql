@@ -1,0 +1,16 @@
+mutation UpdateGame($id:ID!, $name: String!, $active: Boolean!, $imageURL: String!, $type: GameType!) {
+    updateGame (id: $id, game: {
+        name : $name,
+        active: $active,
+        imageURL:  $imageURL,
+        type: $type,
+        createdAt: "2022-10-24"
+    }) {
+        code
+        message
+        game {
+            id
+            name
+        }
+    }
+}

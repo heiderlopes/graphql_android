@@ -1,0 +1,11 @@
+query Query {
+    games {
+        id
+        name
+        imageURL
+        type {
+            type
+            id
+        }
+    }
+}

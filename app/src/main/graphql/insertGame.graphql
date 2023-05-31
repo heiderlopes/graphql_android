@@ -1,0 +1,11 @@
+mutation insertGame($nome: String!, $ativo: Boolean!, $imageURL: String!, $type: GameType!) {
+    addGame (game: {
+        name : $nome,
+        active: $ativo,
+        imageURL:  $imageURL,
+        type: $type,
+        createdAt: "2022-10-24"
+    }) {
+        id
+    }
+}
